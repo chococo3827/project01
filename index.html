@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project01</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- font css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <!-- fontawsome -->
+    <script src="https://kit.fontawesome.com/181f286c37.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script/script.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <header>
+            <div class="inner">
+                <a href="#" class="gnbBtn">
+                    <input type="checkbox" id="trigger">
+                    <label for="trigger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </a>
+                <!-- <i class="fa-solid fa-bars-staggered" style="color: #fff;"></i> -->
+                <a href="./" class="logo"><img src="img/title-2.png" alt="logo"></a>
+                <div class="search">
+                    <input type="text" name="search">
+                    <button><i class="fa-solid fa-magnifying-glass" style="color: #fff;"></i></button>
+                </div>
+            </div>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="./">brand</a></li>
+                    <li><a href="./">shop</a></li>
+                    <li><a href="./">review</a></li>
+                    <li><a href="./">event</a></li>
+                    <li><a href="./">community</a></li>
+                    <li><a href="./">my shopping</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- contents -->
+        <div class="contents">
+
+            <section class="visual">
+                <div class="mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <a href="#">
+                            <img src="img/slide1.jpg" alt="슬라이드1"/>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="#">
+                            <img src="img/slide2.jpg" alt="슬라이드2"/>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="#">
+                            <img src="img/slide3.jpg" alt="슬라이드2"/>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+            </section>
+
+            <section class="about">
+                <div class="inner">
+                    <div class="text">
+                        <h2 class="title">about</h2>
+                        <p>
+                            자연과 만나는 그 순간<br>
+                            자연 속 청량한 휴식을 위해 자연의 향기를 담았습니다.<br>
+                            지친 일상에서 나만의 공간 속 느낄 수 있는<br>
+                            자연으로 편안한 휴식을 선사하는 rest in nature
+                        </p>
+                        <a href="./">view more</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="best">
+                <div class="inner">
+                    <div class="text">
+                        <h2 class="title">best</h2>
+                        <p>
+                            레스트인네이처는 건강하고<br>
+                            지속가능한 제품을 만들기 위해 노력합니다.
+                        </p>
+                    </div>
+                    <ul class="best-product">
+                        <li>
+                            <a href="./">
+                                <div class="best-img">
+
+                                    <img src="img/item1.jpg" alt="플로리스트 디퓨저250">
+                                </div>
+                                <div class="product-name">
+                                    <h3>Florist Diffuser 250ml</h3>
+                                    <span>￦35,000</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./">
+                                <div class="best-img">
+                                    <img src="img/item3.jpg" alt="딥허브 스프레이100">
+                                </div>
+                                <div class="product-name">
+                                    <h3>Deep Herb Fabric Spray 100ml</h3>
+                                    <span>￦12,000</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./">
+                                <div class="best-img">
+                                    <img src="img/item4.jpg" alt="프레쉬그라스 스프레이500">
+                                </div>
+                                <div class="product-name">
+                                    <h3>Fresh Grass Fabric Spray 500ml</h3>
+                                    <span>￦45,000</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="back"></div>
+                </div>
+            </section>
+
+            <section class="guide">
+                <div class="inner">
+                    <ul class="guide-list">
+                        <li>
+                            <a href="./">
+                                <img src="img/florist.jpg" alt="플로리스트">
+                                <span>#Florist</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./">
+                                <img src="img/green.jpg" alt="그린">
+                                <span>#Green</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./">
+                                <img src="img/woody.jpg" alt="우디">
+                                <span>#Woody</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./">
+                                <img src="img/aromatic.jpg" alt="아로마틱">
+                                <span>#Aromatic</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./">
+                                <img src="img/chupre.jpg" alt="시프레">
+                                <span>#Chupre Earthy</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="guide-info">
+                        <div class="text">
+                            <h2 class="title">Fragrance Guide</h2>
+                            <h3>원하시는 향기를 선택하세요</h3>
+                            <p>
+                                자연 본연의 향기를 담은<br>
+                                향 전문 브랜드 레스트인네이처는<br>
+                                자연에서 느낄 수 있는 향기를 오롯이 담아<br>
+                                당신의 순간을 편안함으로 가득 채웁니다.
+                            </p>
+                            <a href="./">shop now</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="event">
+                <div class="inner">
+                    <h2>event</h2>
+                    <ul class="event-list">
+                        <li>
+                            <a href="./">
+                                <img src="img/event1.jpg" alt="프로모션 이벤트">
+                                <div class="text">
+                                    <h3 class="title">신규향기 런칭 20% 세일 이벤트</h3>
+                                    <p>2023/03/15</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./">
+                                <img src="img/event2.jpg" alt="스프레이 세일 이벤트">
+                                <div class="text">
+                                    <h3 class="title">섬유 스프레이 세일 이벤트</h3>
+                                    <p>2023/06/29</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./">
+                                <img src="img/event3.jpg" alt="디뷰저 세일 이벤트">
+                                <div class="text">
+                                    <h3 class="title">디퓨저 500ml 세일 이벤트</h3>
+                                    <p>2023/05/30</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./">
+                                <img src="img/event4.jpg" alt="감사 에디션">
+                                <div class="text">
+                                    <h3 class="title">가정의 달 Love&Thanks Edition</h3>
+                                    <p>2023/04/24</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="map">
+                <div class="inner">
+                    <div class="mySwiper2">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide"><img src="img/mapImg1.jpg" alt="매장안내이미지1"></div>
+                          <div class="swiper-slide"><img src="img/mapImg2.jpg" alt="매장안내이미지2"></div>
+                          <div class="swiper-slide"><img src="img/mapImg3.jpg" alt="매장안내이미지3"></div>
+                        </div>
+                      </div>
+                    <div class="text">
+                        <h2 class="title">내면의 휴식으로 가는 길</h2>
+                        <p>
+                            일상에 지친 모두를 위해 오직 '나'에게<br>
+                            집중하는 힐링과 치유의 시간을 선물합니다.<br>
+                            꾸밈없이 맑은 자연의 향이 당신의 일상에 스며들어<br>
+                            온전한 휴식을 만날 수 있기를 바랍니다.
+                        </p>
+                        <a href="https://map.naver.com/v5/search/rest%20in%20nature?c=14.85,0,0,0,dh">매장안내</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <div class="inner">
+                <h1 class="footerLogo"><img src="img/title-2.png" alt="로고"></h1>
+                <div class="footer-info">
+                    <ul class="contact">
+                        <li><span>Phone</span>02-1234-5678</li>
+                        <li><span>E-mail</span>restinnature@naver.com</li>
+                    </ul>
+                    <ul class="sns">
+                        <li><a href="./">Instagram</a></li>
+                        <li><a href="./">facebook</a></li>
+                        <li><a href="./">twiter</a></li>
+                    </ul>
+                </div>
+                <p>copyright ©restinnature All right reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

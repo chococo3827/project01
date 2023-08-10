@@ -1,0 +1,559 @@
+/* 메인페이지 */
+
+/* reset */
+*{
+    padding: 0;
+    margin: 0;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, 
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, 
+font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6{
+    /* font-weight: 700; */
+    font-size: inherit;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+img{vertical-align: middle;}
+a img{border: none;}
+li{list-style: none;}
+address, em, i{font-style: normal;}
+
+body{
+    color: #333;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.wrap{
+    width: 100%;
+    overflow: hidden;
+}
+.contents{
+    margin-bottom: 270px;
+    background: #fff;
+    z-index: 1;
+}
+
+/* color */
+:root{
+    --headfoot: #617a55;
+    --content: #faf2e5;
+    --gnb: #3f2305;
+}
+
+/* text : 공통 부분 */
+.text .title{
+    font-size: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+.text p{
+    font-size: 19px;
+    color: #555;
+    line-height: 2;
+    margin: 30px 0;
+}
+.text a{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: 1px solid #555;
+    border-radius: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    transition: all 0.5s;
+}
+.text a:hover, .text a:focus{
+    border: 1px solid transparent;
+    border-radius: 0;
+    border-bottom: 1px solid #555;
+    padding: 5px 12px;
+    transition: all 0.3s;
+}
+
+
+/* header */
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: var(--headfoot);
+    padding: 10px 0 20px;
+}
+header .inner{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+header .inner .logo{
+    margin-left: 100px;
+}
+header .inner .logo img{
+    width: 250px;
+}
+header .inner .gnbBtn{
+    float: left;
+    font-size: 35px;
+    margin-top: 27px;
+    z-index: 200;
+    position: relative;
+}
+/* 햄버거버튼 */
+input[id=trigger]{
+    display: none;
+}
+label[for=trigger]{
+    /* border: 1px solid red; */
+    width: 30px;
+    height: 20px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+label[for=trigger] span{
+    position: absolute;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    left: 0;
+    transition: 0.3s;
+}
+label[for=trigger] span:nth-child(1){
+    top: 0;
+}
+label[for=trigger] span:nth-child(2){
+    top: 50%;
+}
+label[for=trigger] span:nth-child(3){
+    top: 100%;
+}
+input[id=trigger]:checked + label[for=trigger] span:nth-child(1){
+    top: 50%;
+    transform: rotate(45deg);
+}
+input[id=trigger]:checked + label[for=trigger] span:nth-child(2){
+    opacity: 0;
+}
+input[id=trigger]:checked + label[for=trigger] span:nth-child(3){
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+header .inner .search{
+    float: right;
+    position: relative;
+    top: 30px;
+}
+header .inner .search input{
+    font-size: 15px;
+    color: #fff;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+}
+header .inner .search button{
+    font-size: 25px;
+    background: none;
+    border: none;
+    position: absolute;
+    right: 5px;
+    bottom: 3px;
+}
+
+
+
+/* nav gnb */
+nav.gnb{
+    position: absolute;
+    /* left: 0; */
+    left: -700px;
+    top: 0;
+    background: var(--gnb);
+    color: #fff;
+    /* width: 400px; */
+    width: 0;
+    height: 100vh;
+    padding: 100px 50px;
+    box-sizing: border-box;
+    text-align: left;
+    transition: all 0.7s;
+    overflow: hidden;
+}
+nav.gnb ul{
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+nav.gnb ul li{
+    line-height: 70px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+/* nav 나타내는 모션 */
+nav.gnb.on{
+    width: 500px;
+    left: 0;
+}
+
+
+
+
+/* contents */
+section.visual{
+    width: 100%;
+}
+.mySwiper{
+    height: 100%;
+}
+section.visual .swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+section.visual .swiper-slide img {
+    display: block;
+    width: 100%;
+}
+.mySwiper .swiper-button-next, .mySwiper .swiper-button-prev{
+    color: gray;
+}
+
+
+/* inner : 공통 부분 */
+.inner{
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+
+/* section about */
+section.about{
+    background: var(--content);
+    padding: 100px 50px;
+}
+section.about .text{
+    margin-left: 100px;
+}
+
+
+
+/* section best */
+section.best{
+    padding: 100px 0;
+    position: relative;
+}
+section.best .text{
+    text-align: center;
+}
+section.best .text .title{
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+section.best .text p{
+    /* font-size: 25px; */
+}
+section.best .best-product{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 50px;
+    /* position: absolute; */
+    /* left: 50%; */
+    /* transform: translateX(10%); */
+}
+section.best .best-product li{
+    width: 25%;
+    z-index: 1;
+}
+section.best .best-product li a img{
+    width: 100%;
+    transition: 0.5s;
+}
+section.best .best-product .best-img{
+    border-radius: 10%;
+    overflow: hidden;
+}
+section.best .best-product li a .product-name{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+section.best .product-name h3{
+    padding: 20px 0;
+    font-weight: 400;
+}
+section.best .back{
+    position: absolute;
+    background: var(--content);
+    width: 2000px;
+    height: 450px;
+    top: 50%;
+    left: 0;
+    z-index: 0;
+}
+/* section best img 모션 */
+section.best .best-product li a:hover img,
+section.best .best-product li a:focus img{
+    transform: scale(1.2);
+    transition: 1s;
+}
+
+
+
+
+/* section guide */
+section.guide{
+    padding: 100px 0;
+}
+section.guide .inner{
+    position: relative;
+    width: 60%;
+}
+section.guide .inner .guide-list{
+    width: 30%;
+}
+section.guide .inner .guide-list li{
+    margin-bottom: 50px;
+}
+section.guide .inner .guide-list li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    overflow: hidden;
+    position: relative;
+    /* border: 1px solid black; */
+}
+section.guide .inner .guide-list li a img{
+    width: 100%;
+    /* filter: brightness(80%); */
+}
+section.guide .inner .guide-list li a span{
+    display: none;
+}
+section.guide .inner .guide-info{
+    position: absolute;
+    width: 45%;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+section.guide .inner .guide-info .title{
+    margin-bottom: 10px;
+}
+
+/* section guide 모션 */
+section.guide .inner .guide-info .text{
+    position: absolute;
+    bottom: 2%;
+}
+section.guide .inner .guide-info .text.on{
+    position: fixed;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+section.guide .inner .guide-list li a.on::after,
+section.guide .inner .guide-list li a:hover::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(41, 41, 41, 0.3);
+}
+section.guide .inner .guide-list li a.on span,
+section.guide .inner .guide-list li a:hover span{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    color: #fff;
+    z-index: 1;
+}
+
+
+
+
+/* section event */
+section.event{
+    padding: 100px 0 400px;
+    background: var(--content);
+}
+section.event .inner{
+    width: 80%;
+}
+section.event .inner h2{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+section.event .inner .event-list{
+    display: flex;
+    justify-content: space-around;
+}
+section.event .inner .event-list li a img{
+    width: 100%;
+}
+section.event .inner .event-list li{
+    width: 300px;
+    position: relative;
+}
+section.event .inner .event-list li a .text .title{
+    font-size: 14px;
+    padding: 20px 0 10px;
+    font-weight: lighter;
+    color: #555;
+    padding-left: 5px;
+    /* font-family: 'Nanum Gothic', sans-serif; */
+    letter-spacing: 1px;
+}
+section.event .inner .event-list li a .text p{
+    padding-left: 5px;
+    margin-top: 0;
+    font-size: 15px;
+    padding-bottom: 20px;
+    color: gray;
+}
+
+/* section event 모션 */
+section.event .inner .event-list li a .text{
+    /* display: none; */
+    position: absolute;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+section.event .inner .event-list li a .text.on{
+    height: 90px;
+    opacity: 1;
+    background: rgb(255, 255, 255, 0.5);
+    box-shadow: 0px 5px 5px 0px lightgray;
+}
+
+
+
+
+/* section map */
+section.map{
+    padding: 100px 0;
+    margin-top: -200px;
+    padding-bottom: 150px;
+}
+section.map .inner{
+    width: 70%;
+    overflow: hidden;
+    position: relative;
+    /* border: 1px solid black; */
+}
+.mySwiper2 {
+    width: 50%;
+    height: 500px;
+    float: left;
+    /* margin-left: auto;
+    margin-right: auto; */
+    overflow: hidden;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section.map .inner .text{
+    width: 45%;
+    position: absolute;
+    bottom: 7px;
+    right: 0;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+section.map .inner .text .title{
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #555;
+}
+section.map .inner .text a{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+
+
+/* footer */
+footer{
+    background: var(--headfoot);
+    color: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 50px 0;
+    z-index: -1;
+}
+footer .inner{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+footer .inner p{
+    text-align: center;
+}
+footer .inner .footerLogo{
+    width: 15%;
+}
+footer .inner .footerLogo img{
+    width: 100%;
+}
+footer .inner .footer-info{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 0 40px;
+}
+footer .inner .footer-info .contact li{
+    margin-bottom: 20px;
+}
+footer .inner .footer-info .contact li span{
+    padding-right: 20px;
+}
+footer .inner .footer-info .sns{
+    display: flex;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+footer .inner .footer-info .sns li{
+    margin: 0 30px;
+    font-weight: bold;
+}
