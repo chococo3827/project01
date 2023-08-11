@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="css/main.css">
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script/scrolla.jquery.min.js"></script>
+    <script src="script/splitting.min.js"></script>
     <script src="script/script.js"></script>
 </head>
 <body>
@@ -34,10 +36,10 @@
                     </label>
                 </a>
                 <!-- <i class="fa-solid fa-bars-staggered" style="color: #fff;"></i> -->
-                <a href="./" class="logo"><img src="img/title-2.png" alt="logo"></a>
+                <a href="./" class="logo"><img src="https://restinnature.co.kr/_images/nav_logo.png" alt="logo"></a>
                 <div class="search">
                     <input type="text" name="search">
-                    <button><i class="fa-solid fa-magnifying-glass" style="color: #fff;"></i></button>
+                    <button><i class="fa-solid fa-magnifying-glass" style="color: #333;"></i></button>
                 </div>
             </div>
             <nav class="gnb">
@@ -51,6 +53,10 @@
                 </ul>
             </nav>
         </header>
+
+        <div id="top">
+            <a href="#" class="upto"></a>
+        </div>
 
         <!-- contents -->
         <div class="contents">
@@ -74,15 +80,15 @@
                         </a>
                       </div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <!-- <div class="swiper-button-next"></div> -->
+                    <!-- <div class="swiper-button-prev"></div> -->
                     <div class="swiper-pagination"></div>
                   </div>
             </section>
 
             <section class="about">
                 <div class="inner">
-                    <div class="text">
+                    <div class="text animate" data-animate="motion" data-splitting>
                         <h2 class="title">about</h2>
                         <p>
                             자연과 만나는 그 순간<br>
@@ -97,14 +103,14 @@
 
             <section class="best">
                 <div class="inner">
-                    <div class="text">
+                    <div class="text animate" data-animate="motion">
                         <h2 class="title">best</h2>
                         <p>
                             레스트인네이처는 건강하고<br>
                             지속가능한 제품을 만들기 위해 노력합니다.
                         </p>
                     </div>
-                    <ul class="best-product">
+                    <ul class="best-product animate" data-animate="motion">
                         <li>
                             <a href="./">
                                 <div class="best-img">
@@ -140,7 +146,7 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="back"></div>
+                    <div class="back animate" data-animate="motion"></div>
                 </div>
             </section>
 
@@ -179,7 +185,7 @@
                         </li>
                     </ul>
                     <div class="guide-info">
-                        <div class="text">
+                        <div class="text animate" data-animate="motion" data-splitting>
                             <h2 class="title">Fragrance Guide</h2>
                             <h3>원하시는 향기를 선택하세요</h3>
                             <p>
@@ -197,7 +203,7 @@
             <section class="event">
                 <div class="inner">
                     <h2>event</h2>
-                    <ul class="event-list">
+                    <ul class="event-list animate" data-animate="motion">
                         <li>
                             <a href="./">
                                 <img src="img/event1.jpg" alt="프로모션 이벤트">
@@ -240,14 +246,14 @@
 
             <section class="map">
                 <div class="inner">
-                    <div class="mySwiper2">
+                    <div class="mySwiper2 animate" data-animate="motion">
                         <div class="swiper-wrapper">
                           <div class="swiper-slide"><img src="img/mapImg1.jpg" alt="매장안내이미지1"></div>
                           <div class="swiper-slide"><img src="img/mapImg2.jpg" alt="매장안내이미지2"></div>
                           <div class="swiper-slide"><img src="img/mapImg3.jpg" alt="매장안내이미지3"></div>
                         </div>
                       </div>
-                    <div class="text">
+                    <div class="text animate" data-animate="motion">
                         <h2 class="title">내면의 휴식으로 가는 길</h2>
                         <p>
                             일상에 지친 모두를 위해 오직 '나'에게<br>
@@ -263,7 +269,7 @@
 
         <footer>
             <div class="inner">
-                <h1 class="footerLogo"><img src="img/title-2.png" alt="로고"></h1>
+                <h1 class="footerLogo"><img src="https://restinnature.co.kr/_images/nav_logo.png" alt="로고"></h1>
                 <div class="footer-info">
                     <ul class="contact">
                         <li><span>Phone</span>02-1234-5678</li>

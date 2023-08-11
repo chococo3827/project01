@@ -23,6 +23,9 @@ a img{border: none;}
 li{list-style: none;}
 address, em, i{font-style: normal;}
 
+html{
+    scroll-behavior: smooth;
+}
 body{
     color: #333;
     /* font-family: 'Montserrat', sans-serif; */
@@ -45,6 +48,12 @@ body{
     --gnb: #3f2305;
 }
 
+
+/* inner : 공통 부분 */
+.inner{
+    width: 90%;
+    margin: 0 auto;
+}
 /* text : 공통 부분 */
 .text .title{
     font-size: 17px;
@@ -79,6 +88,32 @@ body{
 }
 
 
+
+/* top 버튼 */
+#top{
+    opacity: 0;
+}
+#top.on{
+    opacity: 1;
+    transition: 1s;
+}
+#top .upto{
+    position: fixed;
+    z-index: 200;
+    bottom: 3%;
+    right: 1%;
+    width: 91px;
+    height: 98px;
+    text-indent: -9999pc;
+    background: url(../img/naver2.png) no-repeat -306px -426px;
+}
+#top .upto:hover{
+    background-position: -412px -426px;
+}
+
+
+
+
 /* header */
 header{
     width: 100%;
@@ -86,8 +121,9 @@ header{
     top: 0;
     left: 0;
     z-index: 100;
-    background: var(--headfoot);
-    padding: 10px 0 20px;
+    background: none;
+    padding: 10px 0 10px;
+    transition: 0.3s;
 }
 header .inner{
     width: 90%;
@@ -122,7 +158,7 @@ label[for=trigger]{
 label[for=trigger] span{
     position: absolute;
     height: 3px;
-    background-color: #fff;
+    background-color: #333;
     border-radius: 5px;
     width: 100%;
     left: 0;
@@ -156,19 +192,29 @@ header .inner .search{
 }
 header .inner .search input{
     font-size: 15px;
-    color: #fff;
+    color: #333;
     background: none;
     border: none;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #333;
     outline: none;
+    font-size: 17px;
+    width: 180px;
 }
 header .inner .search button{
-    font-size: 25px;
+    font-size: 22px;
     background: none;
     border: none;
     position: absolute;
     right: 5px;
     bottom: 3px;
+}
+
+/* header 모션 */
+header.on{
+    padding: 5px 0 5px;
+    transition: 0.3s;
+    opacity: 0.8;
+    background: #fff;
 }
 
 
@@ -179,9 +225,9 @@ nav.gnb{
     /* left: 0; */
     left: -700px;
     top: 0;
-    background: var(--gnb);
-    color: #fff;
-    /* width: 400px; */
+    background: #fff;
+    color: #333;
+    /* width: 500px; */
     width: 0;
     height: 100vh;
     padding: 100px 50px;
@@ -209,6 +255,24 @@ nav.gnb.on{
     width: 500px;
     left: 0;
 }
+/* gnb 밑줄 애니메이션 */
+.gnb ul li a{
+    position: relative;
+    padding-bottom: 10px;
+}
+.gnb ul li a::before{
+    content: '';
+    position: absolute;
+    background-color: var(--headfoot);
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+.gnb ul li a:hover:before,.gnb ul li a:hover{
+    width: 110%;
+    color: var(--headfoot);
+}
 
 
 
@@ -231,12 +295,13 @@ section.visual .swiper-slide img {
 .mySwiper .swiper-button-next, .mySwiper .swiper-button-prev{
     color: gray;
 }
-
-
-/* inner : 공통 부분 */
-.inner{
-    width: 90%;
-    margin: 0 auto;
+.mySwiper .swiper-pagination-bullet{
+    background-color: var(--headfoot);
+}
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+.swiper-pagination-horizontal.swiper-pagination-bullets 
+.swiper-pagination-bullet{
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap,10px);
 }
 
 
@@ -250,6 +315,31 @@ section.about{
 section.about .text{
     margin-left: 100px;
 }
+section.about .text.motion .word{
+    animation: about-text 0.8s both;
+    animation-delay: calc(0.02s * var(--word-index));
+}
+section.about .text.motion a{
+    animation: border 1s both;
+}
+/* section about 텍스트 애니메이션 */
+@keyframes about-text{
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 0;
+    }
+}
+@keyframes border{
+    0%{
+        border: transparent;
+    }
+    60%{
+        border: transparent;
+    }
+}
+
 
 
 
@@ -311,6 +401,55 @@ section.best .best-product li a:hover img,
 section.best .best-product li a:focus img{
     transform: scale(1.2);
     transition: 1s;
+}
+/* section best 스크롤 모션 */
+section.best .text.motion{
+    animation-name: best-title;
+    animation-duration: 0.7s;
+}
+@keyframes best-title{
+    0%{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    30%{
+        opacity: 0;
+        transform: translateY(50%);
+    }
+}
+section.best .best-product.motion li{
+    animation-name: best-product;
+    animation-duration: 1s;
+}
+section.best .best-product.motion li:nth-child(2){
+    animation-duration: 1.2s;
+}
+section.best .best-product.motion li:nth-child(3){
+    animation-duration: 1.4s;
+}
+@keyframes best-product{
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    30%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+section.best .back.motion{
+    animation-name: back-left;
+    animation-duration: 2.5s;
+}
+@keyframes back-left{
+    0%{
+        opacity: 0;
+        left: -1000px;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
 }
 
 
@@ -376,6 +515,7 @@ section.guide .inner .guide-list li a:hover::after{
     top: 0;
     left: 0;
     background: rgba(41, 41, 41, 0.3);
+    transition: 0.8s;
 }
 section.guide .inner .guide-list li a.on span,
 section.guide .inner .guide-list li a:hover span{
@@ -390,7 +530,31 @@ section.guide .inner .guide-list li a:hover span{
     color: #fff;
     z-index: 1;
 }
-
+/* section guide 스크롤 모션 */
+section.guide .text.motion .word{
+    animation: about-text 0.8s both;
+    animation-delay: calc(0.02s * var(--word-index));
+}
+section.guide .text.motion a{
+    animation: border 1s both;
+}
+/* section about 텍스트 애니메이션 */
+@keyframes guide-text{
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 0;
+    }
+}
+@keyframes border{
+    0%{
+        border: transparent;
+    }
+    60%{
+        border: transparent;
+    }
+}
 
 
 
@@ -452,6 +616,30 @@ section.event .inner .event-list li a .text.on{
     background: rgb(255, 255, 255, 0.5);
     box-shadow: 0px 5px 5px 0px lightgray;
 }
+/* section event 스크롤 모션 */
+section.event .inner .event-list.motion li{
+    animation-name: event-list;
+    animation-duration: 1s;
+}
+section.event .inner .event-list.motion li:nth-child(2){
+    animation-duration: 1.15s;
+}
+section.event .inner .event-list.motion li:nth-child(3){
+    animation-duration: 1.3s;
+}
+section.event .inner .event-list.motion li:nth-child(4){
+    animation-duration: 1.45s;
+}
+@keyframes event-list{
+    0%{
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    30%{
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+}
 
 
 
@@ -475,6 +663,7 @@ section.map .inner{
     /* margin-left: auto;
     margin-right: auto; */
     overflow: hidden;
+    margin-left: 50px;
 }
 .swiper-slide {
     text-align: center;
@@ -491,7 +680,7 @@ section.map .inner{
     object-fit: cover;
 }
 section.map .inner .text{
-    width: 45%;
+    width: 40%;
     position: absolute;
     bottom: 7px;
     right: 0;
@@ -504,14 +693,43 @@ section.map .inner .text .title{
 section.map .inner .text a{
     font-family: 'Nanum Gothic', sans-serif;
 }
+/* section map 스크롤 모션 */
+section.map .mySwiper2.motion{
+    animation-name: map-img;
+    animation-duration: 1.2s;
+}
+@keyframes map-img{
+    0%{
+        opacity: 0;
+        transform: translateX(-1000px);
+    }
+    0%{
+        opacity: 0;
+        transform: translateX(-1000px);
+    }
+}
+section.map .text.motion{
+    animation-name: map-text;
+    animation-duration: 1s;
+}
+@keyframes map-text{
+    0%{
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    0%{
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+}
 
 
 
 
 /* footer */
 footer{
-    background: var(--headfoot);
-    color: #fff;
+    background: var(--content);
+    color: #333;
     position: fixed;
     left: 0;
     bottom: 0;
