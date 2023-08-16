@@ -34,11 +34,18 @@ $(window).on('scroll resize', function(){
     let scrollPos = 0;
     scrollPos = $(document).scrollTop();
     console.log(scrollPos);
-    guideInfo();
-    guideList();
+    if(window.innerWidth > 1400){
+        guideInfo_1();
+        guideList_1();
+    }
+    if(window.innerWidth <= 1400){
+        guideInfo_2();
+        guideList_2();
+    }
 
-    function guideInfo(){
-        if(scrollPos > 2150){
+    // 너비 1400px 이상 일때
+    function guideInfo_1(){
+        if(scrollPos > 2100){
             $('.guide-info .text').addClass('on');
         }
         else{
@@ -48,26 +55,60 @@ $(window).on('scroll resize', function(){
             $('.guide-info .text').removeClass('on');
         }
     }
-
-    function guideList(){
+    function guideList_1(){
         $('section.guide .inner .guide-list li a').removeClass('on');
-        if(scrollPos > 2150){
+        if(scrollPos > 2100){
             $('section.guide .inner .guide-list li a').removeClass('on');
             $('section.guide .inner .guide-list li:eq(0) a').addClass('on');
         }
-        if(scrollPos > 2550){
+        if(scrollPos > 2500){
             $('section.guide .inner .guide-list li a').removeClass('on');
             $('section.guide .inner .guide-list li:eq(1) a').addClass('on');
         }
-        if(scrollPos > 2950){
+        if(scrollPos > 2900){
             $('section.guide .inner .guide-list li a').removeClass('on');
             $('section.guide .inner .guide-list li:eq(2) a').addClass('on');
         }
-        if(scrollPos > 3350){
+        if(scrollPos > 3300){
             $('section.guide .inner .guide-list li a').removeClass('on');
             $('section.guide .inner .guide-list li:eq(3) a').addClass('on');
         }
-        if(scrollPos > 3750){
+        if(scrollPos > 3700){
+            $('section.guide .inner .guide-list li a').removeClass('on');
+            $('section.guide .inner .guide-list li:eq(4) a').addClass('on');
+        }
+    }
+    // 너비 1024px 이상 일때
+    function guideInfo_2(){
+        if(scrollPos > 1800){
+            $('.guide-info .text').addClass('on');
+        }
+        else{
+            $('.guide-info .text').removeClass('on');
+        }
+        if(scrollPos > 3030){
+            $('.guide-info .text').removeClass('on');
+        }
+    }
+    function guideList_2(){
+        $('section.guide .inner .guide-list li a').removeClass('on');
+        if(scrollPos > 1800){
+            $('section.guide .inner .guide-list li a').removeClass('on');
+            $('section.guide .inner .guide-list li:eq(0) a').addClass('on');
+        }
+        if(scrollPos > 2100){
+            $('section.guide .inner .guide-list li a').removeClass('on');
+            $('section.guide .inner .guide-list li:eq(1) a').addClass('on');
+        }
+        if(scrollPos > 2400){
+            $('section.guide .inner .guide-list li a').removeClass('on');
+            $('section.guide .inner .guide-list li:eq(2) a').addClass('on');
+        }
+        if(scrollPos > 2700){
+            $('section.guide .inner .guide-list li a').removeClass('on');
+            $('section.guide .inner .guide-list li:eq(3) a').addClass('on');
+        }
+        if(scrollPos > 3000){
             $('section.guide .inner .guide-list li a').removeClass('on');
             $('section.guide .inner .guide-list li:eq(4) a').addClass('on');
         }

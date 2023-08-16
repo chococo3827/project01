@@ -129,6 +129,8 @@ header .inner{
     width: 90%;
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
 }
 header .inner .logo{
     margin-left: 100px;
@@ -187,8 +189,8 @@ input[id=trigger]:checked + label[for=trigger] span:nth-child(3){
 
 header .inner .search{
     float: right;
-    position: relative;
     top: 30px;
+    position: relative;
 }
 header .inner .search input{
     font-size: 15px;
@@ -206,7 +208,7 @@ header .inner .search button{
     border: none;
     position: absolute;
     right: 5px;
-    bottom: 3px;
+    top: -5px;
 }
 
 /* header 모션 */
@@ -279,10 +281,11 @@ nav.gnb.on{
 
 /* contents */
 section.visual{
-    width: 100%;
+    width: 100vw;
 }
 .mySwiper{
     height: 100%;
+    position: relative;
 }
 section.visual .swiper-slide {
     background-position: center;
@@ -290,13 +293,26 @@ section.visual .swiper-slide {
 }
 section.visual .swiper-slide img {
     display: block;
-    width: 100%;
+    width: 100vw;
 }
-.mySwiper .swiper-button-next, .mySwiper .swiper-button-prev{
-    color: gray;
+.mySwiper .swiper-pagination{
+    position: absolute;
+    bottom: 5%;
+    left: 0;
 }
 .mySwiper .swiper-pagination-bullet{
-    background-color: var(--headfoot);
+    background: transparent;
+    border: 1px solid var(--headfoot);
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    transition: 0.5s;
+}
+.mySwiper .swiper-pagination-bullet-active{
+    width: 40px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: var(--headfoot);
 }
 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
 .swiper-pagination-horizontal.swiper-pagination-bullets 
@@ -584,9 +600,24 @@ section.event .inner .event-list li{
     width: 300px;
     position: relative;
 }
+section.event .inner .event-list li a{
+    display: block;
+    border-radius: 5%;
+    overflow: hidden;
+}
+section.event .inner .event-list li a .text{
+    /* display: none; */
+    position: absolute;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 10%;
+    padding-bottom: 10px;
+}
 section.event .inner .event-list li a .text .title{
     font-size: 14px;
-    padding: 20px 0 10px;
+    padding-top: 20px;
     font-weight: lighter;
     color: #555;
     padding-left: 5px;
@@ -595,23 +626,15 @@ section.event .inner .event-list li a .text .title{
 }
 section.event .inner .event-list li a .text p{
     padding-left: 5px;
-    margin-top: 0;
     font-size: 15px;
-    padding-bottom: 20px;
+    padding-top: 10px;
     color: gray;
+    margin: 0;
 }
 
 /* section event 모션 */
-section.event .inner .event-list li a .text{
-    /* display: none; */
-    position: absolute;
-    width: 100%;
-    height: 0;
-    opacity: 0;
-    transition: 0.5s;
-}
 section.event .inner .event-list li a .text.on{
-    height: 90px;
+    height: auto;
     opacity: 1;
     background: rgb(255, 255, 255, 0.5);
     box-shadow: 0px 5px 5px 0px lightgray;
@@ -665,18 +688,18 @@ section.map .inner{
     overflow: hidden;
     margin-left: 50px;
 }
-.swiper-slide {
+.mySwiper2 .swiper-slide {
     text-align: center;
     font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.swiper-slide img {
+.mySwiper2 .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
+    border-radius: 10%;
     object-fit: cover;
 }
 section.map .inner .text{
@@ -774,4 +797,359 @@ footer .inner .footer-info .sns{
 footer .inner .footer-info .sns li{
     margin: 0 30px;
     font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+/* 반응형 */
+@media screen and (max-width:1400px){
+    /* .mySwiper{
+        position: relative;
+    }
+    .mySwiper .swiper-pagination{
+        position: absolute;
+        bottom: 5%;
+        left: 0;
+    } */
+    header .inner .logo img{
+        width: 200px;
+    }
+    section.guide .inner .guide-info .text p{
+        font-size: 18px;
+    }
+    section.event .inner{
+        width: 90%;
+    }
+    section.event .inner .event-list li{
+        width: 250px;
+    }
+    section.event .inner .event-list li:nth-child(4) a .text.on{
+        /* height: 110px; */
+    }
+    section.map .inner{
+        width: 90%;
+    }
+    footer{
+        height: 190px;
+    }
+}
+@media screen and (max-width:1024px){
+    header .inner .search input{
+        width: 160px;
+    }
+    section.about .inner{
+        width: 100%;
+    }
+    section.about .text{
+        margin-left: 50px;
+    }
+    .text .title{
+        font-size: 16px;
+    }
+    .text p{
+        font-size: 18px;
+    }
+    .text a{
+        font-size: 13px;
+    }
+    section.best .inner{
+        width: 97%;
+    }
+    section.best .text .title{
+        font-size: 18px;
+    }
+    section.best .best-product li{
+        width: 27%;
+    }
+    section.guide .inner{
+        width: 80%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    section.guide .inner .guide-list{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    section.guide .inner .guide-list li{
+        width: 40%;
+        margin-bottom: 70px;
+    }
+    section.guide .inner .guide-info{
+        position: static;
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    section.guide .inner .guide-info .text{
+        position: static;
+    }
+    section.guide .inner .guide-info .text.on{
+        position: static;
+        transform: none;
+    }
+    section.guide .inner .guide-list li a.on::after,
+    section.guide .inner .guide-list li a:hover::after{
+        display: none;
+    }
+    section.guide .inner .guide-list li a img{
+        filter: brightness(90%);
+    }
+    section.guide .inner .guide-list li a.on span,
+    section.guide .inner .guide-list li a span,
+    section.guide .inner .guide-list li a:hover span{
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 3px;
+        color: #fff;
+        z-index: 1;
+    }
+    section.event .inner .event-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    section.event .inner .event-list li{
+        width: 330px;
+        margin: 30px 30px;
+        margin-bottom: 100px;
+    }
+    section.event{
+        padding: 100px 0 200px;
+    }
+    section.map .inner{
+        width: 100%;
+    }
+    footer .inner{
+        width: 90%;
+    }
+    .contents{
+        margin-bottom: 290px;
+    }
+}
+@media screen and (max-width:768px){
+    header .inner .search input{
+        width: 130px;
+    }
+    header .inner .logo img{
+        width: 170px;
+    }
+    label[for=trigger]{
+        width: 25px;
+        height: 17px;
+        cursor: pointer;
+    }
+    header .inner .gnbBtn{
+        margin-top: 20px;
+    }
+    .text .title{
+        font-size: 14px;
+    }
+    .text p{
+        font-size: 17px;
+    }
+    .text a{
+        font-size: 12px;
+    }
+    section.about .text{
+        margin: 0;
+    }
+    section.best .inner{
+        width: 90%;
+    }
+    section.best .best-product{
+        flex-direction: column;
+    }
+    section.best .best-product li{
+        width: 70%;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    section.best .back{
+        width: 800px;
+        top: 25%;
+        height: 1650px;
+    }
+    section.guide{
+        padding: 50px 0;
+    }
+    section.guide .inner{
+        width: 85%;
+    }
+    section.event{
+        padding: 100px 0 300px;
+    }
+    section.event .inner .event-list li a{
+        border-radius: 0;
+    }
+    section.event .inner .event-list li a .text{
+        border-radius: 0;
+    }
+    section.map .inner{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    section.event .inner .event-list li a .text,
+    section.event .inner .event-list li a .text.on{
+        height: auto;
+        opacity: 1;
+        background: rgb(255, 255, 255, 0.5);
+        box-shadow: 0px 5px 5px 0px lightgray;
+    }
+    .mySwiper2{
+        width: 100%;
+        height: 480px;
+        margin-top: 300px;
+        margin-left: 0;
+    }
+    section.map .inner .text{
+        width: 90%;
+        top: 0;
+    }
+    .mySwiper2 .swiper-slide img{
+        width: 85%;
+    }
+    footer{
+        height: 230px;
+    }
+    footer .inner .footerLogo{
+        width: 25%;
+    }
+    footer .inner .footer-info{
+        flex-direction: column;
+    }
+    footer .inner .footer-info .sns li{
+        margin: 0 auto;
+    }
+    .contents{
+        margin-bottom: 300px;
+    }
+    #top{
+        display: none;
+    }
+}
+@media screen and (max-width:500px){
+    header .inner{
+        width: 95%;
+    }
+    header .inner .search{
+        top: 15px;
+    }
+    header .inner .search input{
+        width: 90px;
+    }
+    header .inner .search button{
+        font-size: 15px;
+        top: 0;
+    }
+    header .inner .logo{
+        margin-left: 80px;
+    }
+    header .inner .logo img{
+        width: 150px;
+    }
+    label[for=trigger]{
+        width: 23px;
+        height: 15px;
+        cursor: pointer;
+    }
+    header .inner .gnbBtn{
+        margin-top: 13px;
+    }
+    .inner .text .title{
+        font-size: 12px;
+    }
+    .inner .text p{
+        font-size: 15px;
+    }
+    .inner .text a{
+        font-size: 10px;
+    }
+    .mySwiper .swiper-pagination-bullet{
+        width: 7px;
+        height: 7px;
+    }
+    .mySwiper .swiper-pagination-bullet-active{
+        width: 15px;
+    }
+    section.about{
+        padding: 50px 25px;
+    }
+    section.best{
+        padding: 50px 0;
+    }
+    section.best .best-product{
+        padding-top: 25px;
+    }
+    section.best .best-product li{
+        margin-bottom: 25px;
+    }
+    section.best .back{
+        height: 1000px;
+    }
+    section.guide .inner .guide-info{
+        margin-top: 0;
+    }
+    .guide-info .text .title{
+        font-size: 12px;
+    }
+    section.guide .inner .guide-info .text p{
+        font-size: 15px;
+    }
+    .inner .text a{
+        font-size: 10px;
+    }
+    section.guide .inner .guide-list li{
+        width: 42%;
+        margin-bottom: 60px;
+    }
+    section.guide .inner .guide-list li a.on span, 
+    section.guide .inner .guide-list li a span, 
+    section.guide .inner .guide-list li a:hover span{
+        font-size: 22px;
+    }
+    section.guide .inner .guide-list li:last-child{
+        margin-bottom: 25px;
+    }
+    section.event{
+        padding: 50px 0 200px;
+    }
+    section.event .inner h2{
+        margin-bottom: 25px;
+    }
+    section.event .inner .event-list li{
+        width: 300px;
+    }
+    section.event .inner .event-list li a{
+        border-radius: 0;
+    }
+    section.event .inner .event-list li a .text{
+        border-radius: 0;
+    }
+    section.map{
+        padding: 50px 0;
+        margin-top: -150px;
+    }
+    .mySwiper2{
+        margin-top: 270px;
+        height: auto;
+    }
+    footer{
+        padding: 25px 0;
+    }
+    footer .inner .footerLogo{
+        width: 30%;
+    }
 }
