@@ -282,6 +282,8 @@ nav.gnb.on{
 /* contents */
 section.visual{
     width: 100vw;
+    /* height: 100vh; */
+    /* position: relative; */
 }
 .mySwiper{
     height: 100%;
@@ -294,6 +296,8 @@ section.visual .swiper-slide {
 section.visual .swiper-slide img {
     display: block;
     width: 100vw;
+    /* height: 100vh; */
+    object-fit: cover;
 }
 .mySwiper .swiper-pagination{
     position: absolute;
@@ -484,6 +488,7 @@ section.guide .inner .guide-list{
 }
 section.guide .inner .guide-list li{
     margin-bottom: 50px;
+    /* width: 250px; */
 }
 section.guide .inner .guide-list li a{
     display: block;
@@ -820,8 +825,23 @@ footer .inner .footer-info .sns li{
     header .inner .logo img{
         width: 200px;
     }
+    section.guide .inner .guide-info .text{
+        width: 400px;
+    }
+    section.guide .inner .guide-info .text .title{
+        font-size: 16px;
+    }
+    section.guide .inner .guide-info .text h3{
+        font-size: 15px;
+    }
     section.guide .inner .guide-info .text p{
-        font-size: 18px;
+        font-size: 17px;
+    }
+    .guide-info .text a{
+        font-size: 15px;
+    }
+    section.guide .inner .guide-list li{
+        width: 250px;
     }
     section.event .inner{
         width: 90%;
@@ -1118,7 +1138,7 @@ footer .inner .footer-info .sns li{
     section.guide .inner .guide-list li a.on span, 
     section.guide .inner .guide-list li a span, 
     section.guide .inner .guide-list li a:hover span{
-        font-size: 22px;
+        font-size: 20px;
     }
     section.guide .inner .guide-list li:last-child{
         margin-bottom: 25px;

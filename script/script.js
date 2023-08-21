@@ -34,6 +34,9 @@ $(window).on('scroll resize', function(){
     let scrollPos = 0;
     scrollPos = $(document).scrollTop();
     console.log(scrollPos);
+    // guideInfo_1();
+    // guideList_1();
+
     if(window.innerWidth > 1400){
         guideInfo_1();
         guideList_1();
@@ -43,7 +46,6 @@ $(window).on('scroll resize', function(){
         guideList_2();
     }
 
-    // 너비 1400px 이상 일때
     function guideInfo_1(){
         if(scrollPos > 2100){
             $('.guide-info .text').addClass('on');
